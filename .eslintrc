@@ -1,0 +1,22 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "jsx": true,
+    "useJSXTextNode": true
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "extends": ["standard", "standard-react"],
+  "plugins": ["@typescript-eslint"],
+  "globals": {
+    "_": "readonly"
+  },
+  "env": {
+    "browser": true,
+    "node": false
+  },
+  "rules": {}
+}

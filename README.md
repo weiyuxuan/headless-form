@@ -1,3 +1,3 @@
 # headless-form
 
-React hook form without UI
+React hook form without UI.

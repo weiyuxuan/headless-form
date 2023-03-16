@@ -10,6 +10,6 @@
   "search.exclude": {
     "**/.git": true,
     "**/node_modules": true,
-    "**/dist": true
+    "**/libs": true
   },
 }

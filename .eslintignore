@@ -1,0 +1,8 @@
+# dependencies
+node_modules
+
+# production
+libs
+
+# config
+rollup.config.js

@@ -1,0 +1,28 @@
+{
+  "name": "headless-form",
+  "version": "0.0.1",
+  "description": "React hook form without UI.",
+  "main": "dist/cjs/index.js",
+  "module": "dist/esm/index.js",
+  "types": "dist/esm/index.d.ts",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/weiyuxuan/headless-form.git"
+  },
+  "author": "weiyuxuan",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/weiyuxuan/headless-form/issues"
+  },
+  "homepage": "https://github.com/weiyuxuan/headless-form#readme",
+  "devDependencies": {
+    "@commitlint/cli": "^17.4.4",
+    "@commitlint/config-conventional": "^17.4.4",
+    "husky": "^8.0.3"
+  }
+}

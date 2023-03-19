@@ -1,3 +1,4 @@
+import { JSX } from 'react'
 import { Draft } from 'immer'
 import { RuleItem, Rules, ErrorList, FieldErrorList } from 'async-validator'
 
@@ -19,7 +20,7 @@ export type UseFormValues<Vs extends FormValues> = () => ({
   removeValues: (keys: (keyof Vs)[]) => void
   resetValues: (data?: Vs) => void
   defaultValues: Partial<Vs>
-  setDefaultValues: (defaultValues: Partial<Vs>, isReset?: boolean) => void
+  setDefaultValues: (defaultValues: Partial<Vs>, isResetValues?: boolean) => void
 })
 
 /** form validate rules */
@@ -99,3 +100,72 @@ export type UseFormMeta<M extends FormMeta, N extends FieldMeta> = () => ({
   fieldMeta: { [field: string]: N }
   setFieldMeta: Update<{ [field: string]: N }>
 })
+
+/** form provider */
+export type UseFormProvider = (options?: { defaultValues?: any }) => JSX.Element
+
+/** form instance */
+export interface FormInstance<Vs extends FormValues, M extends FormMeta, N extends FieldMeta> {
+  formId: string
+
+  values: Vs
+  setValues: Update<Vs>
+  meta: M
+  setMeta: Update<M>
+  fieldMeta: { [key: string]: N }
+  reset: () => void
+
+  handleSubmit: (event: any) => void
+  runValidation: () => Promise<string | false | undefined>
+
+  getFieldValue: (fieldPath: string) => any
+  getFieldMeta: (fieldPath: string) => N
+
+  setFieldValue: (fieldPath: string, updater: ((previousValue: any) => any) | any, options?: { isTouched: boolean }) => void
+  setFieldMeta: (fieldPath: string, updater: ((previousMeta: any) => Object) | Object) => void
+  pushFieldValue: (fieldPath: string, newValue: any) => void
+  insertFieldValue: (fieldPath: string, index: number, newValue: any) => void
+  removeFieldValue: (fieldPath: string, index: number) => void
+  swapFieldValues: (fieldPath: string, firstIndex: number, secondIndex: number) => void
+}
+
+/** form context instance */
+export interface FormContextInstance<Vs extends FormValues, M extends FormMeta, N extends FieldMeta> {
+  formId: string
+
+  values: Vs
+  setValues: Update<Vs>
+  meta: M
+  setMeta: Update<M>
+  fieldMeta: { [key: string]: N }
+  reset: () => void
+
+  getFieldValue: (fieldPath: string) => any
+  getFieldMeta: (fieldPath: string) => N
+
+  setFieldValue: (fieldPath: string, updater: ((previousValue: any) => any) | any, options?: { isTouched: boolean }) => void
+  setFieldMeta: (fieldPath: string, updater: ((previousMeta: any) => Object) | Object) => void
+  pushFieldValue: (fieldPath: string, newValue: any) => void
+  insertFieldValue: (fieldPath: string, index: number, newValue: any) => void
+  removeFieldValue: (fieldPath: string, index: number) => void
+  swapFieldValues: (fieldPath: string, firstIndex: number, secondIndex: number) => void
+}
+
+/** field instance */
+export interface FieldInstance<N extends FieldMeta> {
+  fieldName: string
+
+  value: any
+  meta: N
+
+  runValidation: () => Promise<ValidateResult>
+
+  setValue: (updater: ((previousValue: any) => any) | any, options?: { isTouched: boolean }) => void
+  setMeta: (updater: ((previousMeta: any) => Object) | Object) => void
+  pushValue: (newValue: any) => void
+  insertValue: (index: number, newValue: any) => void
+  removeValue: (index: number) => void
+  swapValues: (firstIndex: number, secondIndex: number) => void
+
+  getInputProps: (props?: any) => any
+}

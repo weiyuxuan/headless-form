@@ -41,9 +41,9 @@ export interface ValidateOption<Vs> {
   excludedFields?: string[]
   /** callback after validate */
   callback?: ValidateCallback<Vs>
-  /** if reset error after validate */
+  /** whether to reset error after validate */
   isResetError?: boolean
-  /** if scroll to the first field dom after validate */
+  /** whether to scroll to the first field dom after validate */
   isScroll?: boolean
 }
 export type Validate<Vs> = (option?: ValidateOption<Vs>) => Promise<ValidateResult>
@@ -70,26 +70,26 @@ export type UseFormErrors = () => ({
 
 /** form meta state */
 export interface FormMeta {
-  // default status
+  // default meta
   error?: string
   isTouched?: boolean
   isValidating?: boolean
   isSubmitting?: boolean
   isSubmitted?: boolean
   submissionAttempts?: number
-  // derived status
+  // derived meta
   fieldsAreValidating?: boolean
   fieldsAreValid?: boolean
   isValid?: boolean
   canSubmit?: boolean
-  // custom status
+  // custom meta
   [key: string]: any
 }
 export interface FieldMeta {
   error?: string
   isTouched?: boolean
   isValidating?: boolean
-  // custom status
+  // custom meta
   [key: string]: any
 }
 export type UseFormMeta<M extends FormMeta, N extends FieldMeta> = () => ({

@@ -7,6 +7,11 @@ node_modules
 
 # production
 libs
+dist
+
+# dics
+.umi
+.dumi
 
 # misc
 .DS_Store

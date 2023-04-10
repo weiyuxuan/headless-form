@@ -19,6 +19,7 @@
     "node": true
   },
   "rules": {
-    "react-hooks/exhaustive-deps": "off"
+    "react-hooks/exhaustive-deps": "off",
+    "n/no-callback-literal": "off"
   }
 }

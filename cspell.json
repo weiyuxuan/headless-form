@@ -2,6 +2,9 @@
   "language": "en",
   "words": [
     "weiyuxuan",
-    "immer"
+    "immer",
+    "commitlint",
+    "stylelint",
+    "dumi"
   ]
 }

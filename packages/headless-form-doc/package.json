@@ -1,0 +1,27 @@
+{
+  "name": "@weiyuxuan/headless-form-doc",
+  "version": "0.0.1",
+  "description": "A static document site based on dumi for headless-form.",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "private": true,
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "dumi dev",
+    "build": "dumi build",
+    "prepare": "dumi setup"
+  },
+  "author": "weiyuxuan",
+  "devDependencies": {
+    "dumi": "^2.0.2"
+  },
+  "dependencies": {
+    "@weiyuxuan/headless-form": "^0.0.1"
+  },
+  "peerDependencies": {
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0"
+  }
+}

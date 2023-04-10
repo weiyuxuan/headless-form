@@ -14,10 +14,6 @@
   "workspaces": [
     "packages/headless-form"
   ],
-  "engines": {
-    "node": ">=14.0.0",
-    "yarn": ">=1.4.0"
-  },
   "author": "weiyuxuan",
   "bugs": {
     "url": "https://github.com/weiyuxuan/headless-form/issues"
@@ -44,5 +40,9 @@
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "yarn": ">=1.4.0"
   }
 }

@@ -16,7 +16,7 @@
   },
   "env": {
     "browser": true,
-    "node": false
+    "node": true
   },
   "rules": {
     "react-hooks/exhaustive-deps": "off"

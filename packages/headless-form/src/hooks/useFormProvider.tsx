@@ -9,9 +9,9 @@ interface FormProviderProps {
 }
 
 export default function useFormProvider (options: { defaultValues?: any } = {}) {
-  const formRef = useRef<FC<FormProviderProps>>()
+  const formProviderRef = useRef<FC<FormProviderProps>>()
 
-  if (!formRef.current) {
+  if (!formProviderRef.current) {
     const FormProvider = (props?: FormProviderProps) => {
       const { children } = props
 
@@ -31,8 +31,8 @@ export default function useFormProvider (options: { defaultValues?: any } = {}) 
       )
     }
 
-    formRef.current = FormProvider
+    formProviderRef.current = FormProvider
   }
 
-  return formRef.current
+  return formProviderRef.current
 }

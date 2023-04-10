@@ -1,4 +1,3 @@
-import { JSX } from 'react'
 import { Draft } from 'immer'
 import { RuleItem, Rules, ErrorList, FieldErrorList } from 'async-validator'
 
@@ -100,9 +99,6 @@ export type UseFormMeta<M extends FormMeta, N extends FieldMeta> = () => ({
   fieldMeta: { [field: string]: N }
   setFieldMeta: Update<{ [field: string]: N }>
 })
-
-/** form provider */
-export type UseFormProvider = (options?: { defaultValues?: any }) => JSX.Element
 
 /** form instance */
 export interface FormInstance<Vs extends FormValues, M extends FormMeta, N extends FieldMeta> {

@@ -26,15 +26,15 @@ const InputField = React.forwardRef((props: any, ref) => {
 function MyForm () {
   const { formId, values, meta, fieldMeta, removeFieldValue, pushFieldValue, handleSubmit } = useForm({
     defaultValues: {
-      name: 'tanner',
+      name: 'wei',
       age: 29,
-      email: 'tanner@gmail.com',
+      email: 'weiyx93@gmail.com',
       other: { notes: 'hello' },
-      friends: ['jaylen']
+      friends: ['alex']
     },
     validate: values => {
-      if (values.name === 'tanner' && +values.age !== 29) {
-        return "This is not tanner's correct age"
+      if (values.name === 'wei' && +values.age !== 29) {
+        return "This is not wei's correct age"
       }
       return false
     },

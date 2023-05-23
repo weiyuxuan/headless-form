@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "description": "React hook form without UI.",
   "scripts": {
-    "lint": "eslint -c .eslintrc --ext .ts,.tsx ./packages --fix",
-    "install-peer": "yarn add react@^18.2.0 react-dom@^18.2.0 --peer -W"
+    "lint": "eslint -c .eslintrc --ext .ts,.tsx ./packages --fix"
   },
   "private": true,
   "repository": {
@@ -12,7 +11,8 @@
     "url": "git+https://github.com/weiyuxuan/headless-form.git"
   },
   "workspaces": [
-    "packages/headless-form"
+    "packages/headless-form",
+    "packages/headless-form-doc"
   ],
   "author": "weiyuxuan",
   "bugs": {
@@ -31,20 +31,19 @@
     "eslint-config-standard-jsx": "^11.0.0",
     "eslint-config-standard-react": "^13.0.0",
     "eslint-plugin-import": "^2.26.0",
-    "eslint-plugin-n": "^15.2.4",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "^7.30.1",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.3",
-    "typescript": "^4.9.5"
+    "typescript": "^5.0.4"
   },
   "peerDependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "engines": {
-    "node": ">=14.0.0",
-    "yarn": ">=1.4.0"
+    "node": ">=16.20.0",
+    "npm": ">=7.0.0"
   }
 }
